@@ -1,10 +1,29 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-article
+format: jb-book
 root: intro
-sections:
-- file: content
-  sections:
-  - file: markdown
-  - file: notebooks
+parts:
+- caption: Undergrad Projects
+  chapters:
+  - file: undergrad/class_proj
+    title: Class Projects
+    sections:
+    - file: undergrad/retail_forecast
+      title: Retail Forecasting with SARIMA
+    - file: undergrad/lolwin
+      title: League of Legends Win Classifier
+  - file: undergrad/research_proj
+    - file: undergrad/web_scrape
+      title: Legislative Web Scraping
+    - file: undergrad/sansum
+      title: Modeling the impact of determinants of health on type 2 diabetes in U.S. Latino families
+- caption: Graduate Projects
+  chapters:
+  - file: grad/class_proj
+    sections:
+    - file: grad/word_sim
+      title: Word Similarity using word2vec
+    - file: grad/search_engine
+      title: Search Engine 
+  - file: grad/practicum
