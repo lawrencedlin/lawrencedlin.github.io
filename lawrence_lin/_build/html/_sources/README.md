@@ -13,6 +13,10 @@ If you'd like to develop and/or build the Lawrence Lin book, you should:
 3. (Optional) Edit the books source files located in the `lawrence_lin/` directory
 4. Run `jupyter-book clean lawrence_lin/` to remove any existing builds
 5. Run `jupyter-book build lawrence_lin/`
+6. Run `ghp-import -n -p -f _build/html` to export html pages to gh-pages branch
+
+### Note to self
+Check the repo of the official jupyterbook documentation for example code
 
 A fully-rendered HTML version of the book will be built in `lawrence_lin/_build/html/`.
 

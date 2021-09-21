@@ -100,35 +100,10 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   An Introduction
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="content.html">
-   Content in Jupyter Book
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="markdown.html">
-     Markdown Files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks.html">
-     Content with notebooks
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -225,6 +200,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note-to-self">
+     Note to self
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hosting-the-book">
      Hosting the book
     </a>
@@ -266,7 +246,12 @@
 <li><p>(Optional) Edit the books source files located in the <code class="docutils literal notranslate"><span class="pre">lawrence_lin/</span></code> directory</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">clean</span> <span class="pre">lawrence_lin/</span></code> to remove any existing builds</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">lawrence_lin/</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> to export html pages to gh-pages branch</p></li>
 </ol>
+</div>
+<div class="section" id="note-to-self">
+<h3>Note to self<a class="headerlink" href="#note-to-self" title="Permalink to this headline">¶</a></h3>
+<p>Check the repo of the official jupyterbook documentation for example code</p>
 <p>A fully-rendered HTML version of the book will be built in <code class="docutils literal notranslate"><span class="pre">lawrence_lin/_build/html/</span></code>.</p>
 </div>
 <div class="section" id="hosting-the-book">
