@@ -1,16 +1,17 @@
-# Welcome to your Jupyter Book
-
-This is a small sample book to give you a feel for how book content is
-structured.
-
-:::{note}
-Here is a note!
-:::
-
-And here is a code block:
-
+# Introduction
+---
+```{image} /images/profile.png
+---
+name: profile
+align: center
+width: 65%
+class: w3-border w3-padding
+---
 ```
-e = mc^2
-```
+---
+My name is Lawrence Lin and I am currently a M.S. Data Science candidate @ the University of San Francisco. My interests are in sentiment analysis and computer vision. My favorite data visualizations are from fivethiryeight.com and the [Wall Street Journal](https://www.wsj.com).
++++
+On this website, I have highlighted some of my favorite projects spanning my undergraduate and graduate years. I hope you enjoy! 
 
-Check out the content pages bundled with this sample book to see more.
+
+
