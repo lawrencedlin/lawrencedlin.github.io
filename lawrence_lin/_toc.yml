@@ -4,28 +4,17 @@
 format: jb-book
 root: intro
 parts:
+- caption: Data Visualizations
+  chapters:
+  - file: viz
 - caption: Undergrad Projects
   chapters:
-  - file: undergrad/class_proj
-    title: Class Projects
-    sections:
-    - file: undergrad/retail_forecast
-      title: Retail Forecasting with SARIMA
-    - file: undergrad/lolwin
-      title: League of Legends Win Classifier
-  - file: undergrad/research_proj
-    title: Research Projects
-    sections:
-    - file: undergrad/web_scrape
-      title: Legislative Web Scraping
-    - file: undergrad/sansum
-      title: Modeling the impact of determinants of health on type 2 diabetes in U.S. Latino families
-#- caption: Graduate Projects
-#  chapters:
-#  - file: grad/class_proj
-#    sections:
-#    - file: grad/word_sim
-#      title: Word Similarity using word2vec
-#    - file: grad/search_engine
-#      title: Search Engine 
-#  - file: grad/practicum
+  - file: undergrad/retail_forecast
+  - file: undergrad/lolwin
+  - file: undergrad/web_scrape
+  - file: undergrad/sansum
+- caption: Graduate Projects
+  chapters:
+  - file: grad/word_sim
+  - file: grad/search_engine
+  - file: grad/practicum
