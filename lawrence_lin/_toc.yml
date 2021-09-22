@@ -11,7 +11,6 @@ parts:
   chapters:
   - file: undergrad/LL-174-Final
   - file: undergrad/lolwin
-    title: League of Legends Win Classifier
   - file: undergrad/web_scrape
   - file: undergrad/sansum
 - caption: Graduate Projects

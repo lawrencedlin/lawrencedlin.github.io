@@ -117,6 +117,11 @@
    League of Legends Win Classifier
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sansum.html">
+   Sansum
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -327,7 +332,7 @@ within the 95% Confidence interval of the Box-Cox transformation, we use
 a log-transformation on the original data. We can see that the variance
 is no longer increasing with time and the data is more normally
 distributed.</p>
-<a class="reference internal image-reference" href="undergrad/LL-174-Final_files/figure-markdown_strict/BoxCox-1.png"><img alt="undergrad/LL-174-Final_files/figure-markdown_strict/BoxCox-1.png" src="undergrad/LL-174-Final_files/figure-markdown_strict/BoxCox-1.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/BoxCox-1.png"><img alt="../_images/BoxCox-1.png" src="../_images/BoxCox-1.png" style="width: 70%;" /></a>
 <p>We plot the time series, a histogram, and the P/ACF of the
 log-transformed data here.</p>
 <p><a class="reference internal" href="../_images/Log-data-1.png"><img alt="../_images/Log-data-1.png" src="../_images/Log-data-1.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/Log-data-2.png"><img alt="../_images/Log-data-2.png" src="../_images/Log-data-2.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/Log-data-3.png"><img alt="../_images/Log-data-3.png" src="../_images/Log-data-3.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/Log-data-4.png"><img alt="../_images/Log-data-4.png" src="../_images/Log-data-4.png" style="width: 50%;" /></a></p>
@@ -431,7 +436,7 @@ models are causal and stationary. Because model A and model D are both
 pure AR(p) models, they are always invertible. We show that both models
 are both causal and stationary because all of their roots lie inside of
 the unit circle.</p>
-<p><a class="reference internal" href="undergrad/LL-174-Final_files/figure-markdown_strict/invroots-1.png"><img alt="undergrad/LL-174-Final_files/figure-markdown_strict/invroots-1.png" src="undergrad/LL-174-Final_files/figure-markdown_strict/invroots-1.png" style="width: 50%;" /></a><a class="reference internal" href="undergrad/LL-174-Final_files/figure-markdown_strict/invroots-2.png"><img alt="undergrad/LL-174-Final_files/figure-markdown_strict/invroots-2.png" src="undergrad/LL-174-Final_files/figure-markdown_strict/invroots-2.png" style="width: 50%;" /></a></p>
+<p><a class="reference internal" href="../_images/invroots-1.png"><img alt="../_images/invroots-1.png" src="../_images/invroots-1.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/invroots-2.png"><img alt="../_images/invroots-2.png" src="../_images/invroots-2.png" style="width: 50%;" /></a></p>
 </div>
 <div class="section" id="diagnostic-checking">
 <h2>Diagnostic Checking<a class="headerlink" href="#diagnostic-checking" title="Permalink to this headline">¶</a></h2>
@@ -551,18 +556,18 @@ can see that test set falls with our 95% Prediction intervals.</p>
 </div>
 <div class="section" id="forecasting">
 <h2>Forecasting<a class="headerlink" href="#forecasting" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-log-1.png"><img alt="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-log-1.png" src="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-log-1.png" style="width: 50%;" /></a><a class="reference internal" href="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-log-2.png"><img alt="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-log-2.png" src="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-log-2.png" style="width: 50%;" /></a></p>
+<p><a class="reference internal" href="../_images/Forecasting-log-1.png"><img alt="../_images/Forecasting-log-1.png" src="../_images/Forecasting-log-1.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/Forecasting-log-2.png"><img alt="../_images/Forecasting-log-2.png" src="../_images/Forecasting-log-2.png" style="width: 50%;" /></a></p>
 <p>Now we forecast on the original data by exponentiating the forecasted
 values prior. The test set still falls within our 95% Prediction
 intervals.</p>
-<p><a class="reference internal" href="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-original-1.png"><img alt="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-original-1.png" src="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-original-1.png" style="width: 50%;" /></a><a class="reference internal" href="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-original-2.png"><img alt="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-original-2.png" src="undergrad/LL-174-Final_files/figure-markdown_strict/Forecasting-original-2.png" style="width: 50%;" /></a></p>
+<p><a class="reference internal" href="../_images/Forecasting-original-1.png"><img alt="../_images/Forecasting-original-1.png" src="../_images/Forecasting-original-1.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/Forecasting-original-2.png"><img alt="../_images/Forecasting-original-2.png" src="../_images/Forecasting-original-2.png" style="width: 50%;" /></a></p>
 </div>
 </div>
 <div class="section" id="iv-conclusion">
 <h1>IV. Conclusion<a class="headerlink" href="#iv-conclusion" title="Permalink to this headline">¶</a></h1>
-<p>In conclusion, I was able to successfully model the data as a <em>A**R</em>(3)
+<p>In conclusion, I was able to successfully model the data as a AR(3)
 process, differenced at lag 12 or as a
-<em>S<strong>A</strong>R<strong>I</strong>M**A</em>(3, 0, 0) × (0, 1, 0)<sub>12</sub>. The final model
+SARIMA(3, 0, 0) × (0, 1, 0)<sub>12</sub>. The final model
 was
 (1 − <em>B</em><sup>12</sup>)(1 − 0.257<em>B</em> − 0.401<em>B</em><sup>2</sup> − 0.313<em>B</em><sup>3</sup>)<em>X</em><sub><em>t</em></sub> = <em>Z</em><sub><em>t</em></sub></p>
 <p>where <em>Z</em><sub><em>t</em></sub> ∼ <em>N</em>(0, 0.00032)</p>

@@ -308,9 +308,9 @@ intervals.
 IV. Conclusion
 ==============
 
-In conclusion, I was able to successfully model the data as a *A**R*(3)
+In conclusion, I was able to successfully model the data as a AR(3)
 process, differenced at lag 12 or as a
-*S**A**R**I**M**A*(3, 0, 0) × (0, 1, 0)<sub>12</sub>. The final model
+SARIMA(3, 0, 0) × (0, 1, 0)<sub>12</sub>. The final model
 was
 (1 − *B*<sup>12</sup>)(1 − 0.257*B* − 0.401*B*<sup>2</sup> − 0.313*B*<sup>3</sup>)*X*<sub>*t*</sub> = *Z*<sub>*t*</sub>
   
