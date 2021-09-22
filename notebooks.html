@@ -42,8 +42,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -85,10 +83,40 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   An Introduction
+   Introduction
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Visualizations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="viz.html">
+   From school
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Undergrad Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="undergrad/LL-174-Final.html">
+   Retail Sales Forecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undergrad/lolwin.html">
+   League of Legends Win Classifier
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -144,11 +172,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/lawrencelin/Lawrence Lin"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/lawrencedlin/lawrencedlin.github.io"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/lawrencelin/Lawrence Lin/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/lawrencedlin/lawrencedlin.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -169,7 +197,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/lawrencelin/Lawrence Lin/main?urlpath=tree/docs/notebooks.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/lawrencedlin/lawrencedlin.github.io/main?urlpath=tree/docs/notebooks.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -225,19 +253,17 @@ code blocks and their outputs in your book.</p>
 <h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>As it is markdown, you can embed images, HTML, etc into your posts!</p>
 <p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo.png" /></p>
-<p>You can also <span class="math notranslate nohighlight">\(add_{math}\)</span> and</p>
-<div class="math notranslate nohighlight">
-\[
+<p>You can also $add_{math}$ and</p>
+<p>$$
 math^{blocks}
-\]</div>
+$$</p>
 <p>or</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>$$
 \begin{aligned}
-\mbox{mean} la_{tex} \\ \\
+\mbox{mean} la_{tex} \ \
 math blocks
 \end{aligned}
-\end{split}\]</div>
+$$</p>
 <p>But make sure you $Escape $your $dollar signs $you want to keep!</p>
 </div>
 <div class="section" id="myst-markdown">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Lawrence Lin</title>
+    <title>League of Legends Win Classifier &#8212; Lawrence Lin</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="&lt;no title&gt;" href="web_scrape.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="retail_forecast.html" />
+    <link rel="prev" title="Retail Sales Forecasting" href="LL-174-Final.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -85,10 +85,40 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   An Introduction
+   Introduction
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Visualizations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../viz.html">
+   From school
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Undergrad Projects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="LL-174-Final.html">
+   Retail Sales Forecasting
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   League of Legends Win Classifier
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -144,11 +174,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/lawrencelin/Lawrence Lin"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/lawrencedlin/lawrencedlin.github.io"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/lawrencelin/Lawrence Lin/issues/new?title=Issue%20on%20page%20%2Fundergrad/lolwin.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/lawrencedlin/lawrencedlin.github.io/issues/new?title=Issue%20on%20page%20%2Fundergrad/lolwin.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -173,7 +203,90 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   League of Legends Win Classifier
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-brief-primer-on-lol">
+     A Brief Primer on LoL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-data">
+   I. Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-plan">
+     Analysis Plan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-overview-of-new-features">
+     Data Overview of new features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ii-model-building">
+   II. Model Building
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression-model-building">
+     Logistic Regression Model Building
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression-model-analysis">
+     Logistic Regression Model Analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-forests-model-building">
+     Random Forests Model Building
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-model">
+     Final Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iii-conclusion">
+   III. Conclusion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitations">
+     Limitations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#future-research-directions">
+     Future Research Directions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iv-references">
+   IV. References
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#v-appendix">
+   V. Appendix
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -185,7 +298,544 @@
         
               <div>
                 
-  
+  <div class="section" id="league-of-legends-win-classifier">
+<h1>League of Legends Win Classifier<a class="headerlink" href="#league-of-legends-win-classifier" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>League of Legends, commonly abbreviated LoL, is a popular video game
+with millions of concurrent players. In its premier 5v5 competitive
+mode, the objective is to destroy the opposing team’s nexus. In this
+report, we will attempt to classify whether a given team wins or loses
+using measures of in-game performance.</p>
+<div class="section" id="a-brief-primer-on-lol">
+<h2>A Brief Primer on LoL<a class="headerlink" href="#a-brief-primer-on-lol" title="Permalink to this headline">¶</a></h2>
+<p>In a LoL game, each player selects a unique champion to control for the
+duration of the game, which is usually from 20-40 minutes. The goal is
+to destroy the opposing team’s nexus, which are located on in the enemy
+base protected by layers of towers which damage enemies that walk within
+a certain radius. Minions spawn from each nexus and walk down one of the
+three lanes on the game map and attack enemy minions, champions, and
+towers.<br />
+<img alt="" src="../_images/leaguemap.jpeg" /></p>
+<p>Each player that occupies a lane (or jungle where neutral minions spawn)
+will kill enemy minions and enemy champions that give gold that can be
+used to buy items in their base that strengthen their champion. There
+are also two neutral objectives along the centerline of the map that
+grant teamwide buffs that make killing enemy minions, champions, and
+towers easier. There are three towers in each lane that must be
+destroyed in order from outermost to innermost. After the third and
+innermost tower of a lane is destroyed, the inhibitor is targetable in
+that lane. The destruction of the inhibitor causes the minions in that
+lane to become empowered and destroy enemy minions and towers with ease.
+The two nexus turrets also become targetable. When the nexus turrets go
+down, then the enemy nexus is vulnerable and the team that destroys the
+nexus wins. ## Research Question I am interested in investigating how
+beneficial variables such as enemy champion kills, vision, and
+experience are for League of Legends teams. My research question is
+this: How accurately can we classify a team as a winner or loser looking
+at the overall performance of the team?</p>
+</div>
+</div>
+<div class="section" id="i-data">
+<h1>I. Data<a class="headerlink" href="#i-data" title="Permalink to this headline">¶</a></h1>
+<p>I obtained my data from kaggle. The data is from ranked League of
+Legends games from the three highest LoL ranks: Challenger, GrandMaster,
+and Master. These top three divisions comprise of the top 0.1% League
+players in the world (Christina Gough <a class="reference external" href="#ref-Percentage">2019</a>).</p>
+<p>The data comes in the form of three csv files. There is one csv file for
+each division: Challenger, Grandmaster, and Master. I have combined each
+of the csv files into the dataframe HighElo. Included in HighElo are 48
+predictors with 24 being unique to each team, and then the variable
+gameDuraton which is equal for both teams. We exclude the column gameId
+as it has no bearing on the outcome of the game.We cam see that there
+are a total of 49 predictor variables, with 47 being integers and 2
+being numeric.</p>
+<table>
+<caption>Dimensions of HighElo</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Rows</th>
+<th style="text-align: right;">Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">185568</td>
+<td style="text-align: right;">50</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Predictor variables: Count and type, High Elo</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: right;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">integer</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Missingness of HighElo</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Missing Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Because the original data does not account for game length for each
+metric, we will be creating new features that do that and visualize them
+in the Methods section. I have already added a column to convert the
+game duration to minutes which we will use to calculate metrics based on
+the difference in gold, champion damage, objective damage, and more per
+minute to equate for game length. We have also discarded all games less
+than 15 minutes as that is the earliest possible time a team can
+surrender. # III. Methods</p>
+<div class="section" id="analysis-plan">
+<h2>Analysis Plan<a class="headerlink" href="#analysis-plan" title="Permalink to this headline">¶</a></h2>
+<p>My analysis plan is to use supervised machine learning to classify a
+given LoL team to the labels “Win” or “Lose”. Because this is a binary
+classification problem, I believe it would be appropriate to train a
+logistic regression model and a Random Forest models on the data. For
+the Logistic Regression Model, I will find the optimal threshold value
+for classification by calculating the smallest euclidean distance
+between (<em>F<strong>P</strong>R</em>, <em>F<strong>N</strong>R</em>) and (0, 0). For the Random Forest model,
+I will tune the parameter mtry using the function tuneRF(). My final
+model will be the lower of the validation error of 10-Fold Cross
+Validation on the Logistic Regression, or the Out-of-Bag error rate for
+the Random Forest (Cross-validation is not necessary since the
+Out-of-Bag error rate approximates the validation error).</p>
+<p>I will randomly choose between whether I am classifying the binary
+win/loss outcome variable for blue side or red side. My response
+variable will be the binary outcome variable Win, which equals 1 if the
+selected team wins and 0 if they lose.</p>
+<p>I made a 80/20 split for the Training and Test Sets, which leaves us
+with 148,454 observations in the training set and 37,114 observations in
+the test set.I designated a 50/50 split of the Training and Test sets
+analyzing the game from the blue side and red side. I then created new
+features GoldDiffPerMin, WardPlaceDiffPerMin,HealDiffPerMin, and other
+binary variables that only tracked the condition of the variable for the
+team chosen. I concatenated Blue and Red dataframes together to get my
+new Training and Test datasets.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#Training and Test splits
+set.seed(1)
+SampleIndex &lt;- sample(1:nrow(HighElo),0.80*nrow(HighElo))
+Train &lt;- HighElo[SampleIndex,]
+Test &lt;- HighElo[-SampleIndex,]
+
+# Sample 50% of games from blue side for training and test set
+set.seed(2)
+SampleBlueTrain &lt;- sample(1:nrow(Train),0.5*nrow(Train))
+SampleBlueTest &lt;- sample(1:nrow(Test),0.5*nrow(Test))
+
+#Create Blue training set and Red training set
+BlueTrain &lt;- Train[SampleBlueTrain,]
+RedTrain &lt;- Train[-SampleBlueTrain,]
+
+# Combine Blue and Red Test sets back into one set using new predictors
+Test &lt;- rbind(BlueTest,RedTest)
+
+# Create Train response and Train predictors
+Test &lt;- select(Test,MinGameDuration:Win)
+Test$Win &lt;- as.factor(Test$Win)
+
+TestY &lt;- select(Test, Win)
+TestX &lt;- select(Test, -Win)
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-overview-of-new-features">
+<h2>Data Overview of new features<a class="headerlink" href="#data-overview-of-new-features" title="Permalink to this headline">¶</a></h2>
+<p>The basic attributes of the modified set of all the data are summarized
+below, along with the five-number summary of the continuous variables. I
+have summarized the counts of the binary variables as well. The average
+game time is 24.89 minutes. We can see that most of the predictors have
+long tails in their distributions.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## $MinGameDuration
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   15.00   20.08   24.37   24.89   29.27   62.63 
+## 
+## $GoldDiffPerMin
+##       Min.    1st Qu.     Median       Mean    3rd Qu.       Max. 
+## -2196.7251  -357.7404    -0.5794    -0.2470   357.7043  2231.9337 
+## 
+## $WardPlaceDiffPerMin
+##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+## -9.728097 -0.326594  0.000000  0.001493  0.327154 11.766883 
+## 
+## $DamageDiffPerMin
+##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+## -6348.849  -559.068     1.429     0.784   562.967  6024.704 
+## 
+## $HealDiffPerMin
+##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+## -7057.366  -344.173    -2.328    -0.520   342.610  7670.970 
+## 
+## $ObjectDmgDiffPerMin
+##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+## -6899.430 -1293.020     1.104    -1.088  1288.071  7206.353
+</pre></div>
+</div>
+<p>Here is a data overview of the new features created from the original
+data.</p>
+<table>
+<caption>Dimensions of All Data</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Rows</th>
+<th style="text-align: right;">Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">185568</td>
+<td style="text-align: right;">11</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Predictor variables: Count and type, All Data</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: right;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">factor</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">integer</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Missingness of All Data</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Missing Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Frequencies for binary variables</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">FirstTower</th>
+<th style="text-align: right;">FirstBaron</th>
+<th style="text-align: right;">FirstInhibitor</th>
+<th style="text-align: right;">FirstDragon</th>
+<th style="text-align: right;">Win</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">92340</td>
+<td style="text-align: right;">135932</td>
+<td style="text-align: right;">115699</td>
+<td style="text-align: right;">99770</td>
+<td style="text-align: right;">92837</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">93228</td>
+<td style="text-align: right;">49636</td>
+<td style="text-align: right;">69869</td>
+<td style="text-align: right;">85798</td>
+<td style="text-align: right;">92731</td>
+</tr>
+</tbody>
+</table>
+<p>I have created the boxplots of the response variable Win vs the
+continuous predictors to get infer their relationships to the response.
+From the boxplots it appears that GoldDiffPerMin and ObjectDmgDiffPerMin
+are usually higher for winning teams.</p>
+<p><img alt="" src="../_images/Boxplots-1.png" /></p>
+</div>
+</div>
+<div class="section" id="ii-model-building">
+<h1>II. Model Building<a class="headerlink" href="#ii-model-building" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="logistic-regression-model-building">
+<h2>Logistic Regression Model Building<a class="headerlink" href="#logistic-regression-model-building" title="Permalink to this headline">¶</a></h2>
+<p>I fit a Logistic Regression Model using the glm() function, to model the
+probability of Win on the predictors. The summary shows that all of the
+coefficients are positive except FirstTower and FirstBaron. This can be
+interpreted as meaning that the log-odds of winning are increased by all
+of our predictors except FirstTower and FirstBaron, where the log-odds
+of winning decrease when they are equal to 1. This goes against what we
+see in our initial visualizations of the data, where I plotted the
+response vs. the predictors, which showed that FirstTower and FirstBaron
+was more often 1 for the winning teams. It is possible the the estimates
+of the parameters of my Logistic Regression model are unstable, because
+the classes are well-separated; in particular, GoldDiffPerMin is a very
+good predictor of Win. After performing 10-Fold Cross Validation, my
+validation error is 1.51%.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## 
+## Call:
+## glm(formula = Win ~ . - MinGameDuration, family = binomial, data = Train)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -7.4749  -0.0208   0.0000   0.0228   6.5889  
+## 
+## Coefficients:
+##                       Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)          7.861e-02  4.000e-02   1.965   0.0494 *  
+## GoldDiffPerMin       2.120e-02  2.329e-04  91.003  &lt; 2e-16 ***
+## WardPlaceDiffPerMin  1.715e-01  3.943e-02   4.350 1.36e-05 ***
+## DamageDiffPerMin     2.524e-04  3.347e-05   7.542 4.62e-14 ***
+## HealDiffPerMin       1.750e-04  3.620e-05   4.835 1.33e-06 ***
+## ObjectDmgDiffPerMin  3.869e-04  3.081e-05  12.557  &lt; 2e-16 ***
+## FirstTower          -1.014e+00  4.305e-02 -23.558  &lt; 2e-16 ***
+## FirstBaron          -8.304e-01  4.560e-02 -18.210  &lt; 2e-16 ***
+## FirstInhibitor       1.317e+00  4.233e-02  31.118  &lt; 2e-16 ***
+## FirstDragon          2.268e-01  4.226e-02   5.368 7.95e-08 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 205801  on 148453  degrees of freedom
+## Residual deviance:  17318  on 148444  degrees of freedom
+## AIC: 17338
+## 
+## Number of Fisher Scoring iterations: 9
+
+## [1] &quot;Cross Validation Error&quot;
+
+## [1] 0.01512488
+</pre></div>
+</div>
+</div>
+<div class="section" id="logistic-regression-model-analysis">
+<h2>Logistic Regression Model Analysis<a class="headerlink" href="#logistic-regression-model-analysis" title="Permalink to this headline">¶</a></h2>
+<p>First I plotted the predictors versus the estimated probabilities of the
+training data. It appears that past a positive threshold value of
+GoldDiffPerMin, the estimated probability is always about 1. For the
+other predictors, demonstrating that it is indeed a well-separated
+class. WardPlaceDiffPerMin is similar except past a positive threeshold
+value, the estimated probability of winning is 0.</p>
+<p>In general, the estimated probability of winning is slightly higher for
+the teams that capture the First Baron, First Tower, and First
+Inhibitor.</p>
+<p><img alt="" src="../_images/Visualize-Log-1.png" /><img alt="" src="../_images/Visualize-Log-2.png" /></p>
+<p>I created an AUC graph and a ROC graph for the logistic regression on
+Win. From the performance() function we can see that the optimal
+threshold is 0.48, so we should set the threshold for predicting “Win”
+when the probability is more than to 0.48. We can see from the ROC curve
+that there is little tradeoff between tpr and fpr because the
+classifcation error rate is so low. The Area under the Curve is 99.7%.
+After setting the threshold value at 0.48, the test error rate for the
+Logistic regression is 1.88% which shows that our model is generalizing
+well to the test data, and not overfitting.</p>
+<p><img alt="" src="../_images/Data-Analysis-Log-Regression-1.png" /><img alt="" src="../_images/Data-Analysis-Log-Regression-2.png" /></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## [1] &quot;Test Classification error for Logistic Regression&quot;
+
+## [1] 0.01880692
+</pre></div>
+</div>
+</div>
+<div class="section" id="random-forests-model-building">
+<h2>Random Forests Model Building<a class="headerlink" href="#random-forests-model-building" title="Permalink to this headline">¶</a></h2>
+<p>Using the randomForest() function, I fit a Random Forest model to my
+training data. We can see that the OOB estimate of error rate is 1.48%,
+which is a small improvement over the Logistic Regression validation
+error rate of 1.51%, and indicates that our model should not overfit and
+should generalize well to real data. The False Negative rate is 1.47%
+while the False Positive rate is 1.49%.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## [1] &quot;Summary of rf.HighElo&quot;
+
+## 
+## Call:
+##  randomForest(formula = Win ~ . - MinGameDuration, data = Train,      ntree = 250, importance = TRUE, mtry = 3) 
+##                Type of random forest: classification
+##                      Number of trees: 250
+## No. of variables tried at each split: 3
+## 
+##         OOB estimate of  error rate: 1.5%
+## Confusion matrix:
+##       0     1 class.error
+## 0 73251  1093  0.01470193
+## 1  1134 72976  0.01530158
+</pre></div>
+</div>
+<p><img alt="" src="../_images/Method-Random-Forest-1.png" /></p>
+<p>I used the tuneRF() function to find an optimal value of mtry. Starting
+with the default of $mtry = \sqrt{p} = 3$, it looks 1 step in each
+direction to see if it offers enough of an improvement in OOB estimate
+of error. After running this function, the optimal value was 3. ##
+Random Forests Model Analysis</p>
+<p>Looking at the variable importance plot and saw that GoldDiffPerMin was
+by far the most important variable in terms of both model accuracy and
+Gini index. WardPlaceDiffPerMin was the second most important in terms
+of model accuracy, while ObjectDmgDiffPerMin was second most important
+in terms of Gini index. Looking at the plot of the number of trees vs
+the OOB estimate of error rate, we can see that the OOB estimate of
+error rate stabilizes after about 75 trees and futher performance
+increases are minimal.
+<img alt="" src="../_images/Data-Analysis-RandomForest-1.png" /><img alt="" src="../_images/Data-Analysis-RandomForest-2.png" /></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## [1] &quot;Test Classification Error rate for Random Forest&quot;
+
+## [1] 0.01468449
+</pre></div>
+</div>
+</div>
+<div class="section" id="final-model">
+<h2>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h2>
+<p>After comparing the validation error for the Logistic Regression model
+and the Out-Of-Bag error for the Random Forest Model, I choose the
+Random Forest Model for its higher accuracy. The final Random Forest
+model as a test error rate of 1.49%.</p>
+</div>
+</div>
+<div class="section" id="iii-conclusion">
+<h1>III. Conclusion<a class="headerlink" href="#iii-conclusion" title="Permalink to this headline">¶</a></h1>
+<p>In conclusion, classifying the winning League of Legends team can be
+done well and it depends highly on how much gold a team has, how many
+more objectives a team does, and how many wards (which provide map
+vision) a team places. My model only classified 549 observations
+incorrectly out of 37,114 observations in the test set. However, I
+recommend for future projects to consider data that captures the state
+of the game at different poitns of time, to gain an idea of which
+variables are most beneficial to a team at different points of the game
+flow. My final model was</p>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<p>The limitations of this study are that to win a game in League of
+Legends, a team has to win the final teamfight and kill most of the
+enemy team. Both nexus towers are usually destroyed right after this
+crucial teamfight, along with the nexus. In LoL, each tower destroyed
+grants global gold to the team. Therefore, it makes sense that
+GoldDiffPerMin would be such a strong predictor of our response
+variable, as this could result in a higher GoldDiffPerMin for the
+winning team. Another Limitation of this study is that it considers the
+top 0.1% of League of Legends players. These high-ranked players make
+much fewer mistakes than lower-ranked players. Therefore, they will
+rarely throwaway games where they have generated an advantage. This
+explains why are classifier is so good at classifygin “Win” or “Lose”,
+because generally generating a team advantage results in a win,
+reflecting the skill level of the best League of Legends players.</p>
+</div>
+<div class="section" id="future-research-directions">
+<h2>Future Research Directions<a class="headerlink" href="#future-research-directions" title="Permalink to this headline">¶</a></h2>
+<p>A similar project showed accuracy rates for end-of-=game data, with an
+accuracy rate of 98.09% for the logistic regression model and 97.77% for
+the Random Forest Model (Shayaan Jagtap <a class="reference external" href="#ref-Medium">2018</a>). Therefore,
+I know my results are sound. Future research directions should pursue
+the impact of champion selection on winning a game, for example,
+predicting whether a team will win or lose based on the pre-game
+champion selection. In the competitive League of Legends scene, emphasis
+is placed on champion synergies and counters. Assuming equal
+matchmaking, it would be interesting to see how the result of the game
+is decided before the game has even started.</p>
+</div>
+</div>
+<div class="section" id="iv-references">
+<h1>IV. References<a class="headerlink" href="#iv-references" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="v-appendix">
+<h1>V. Appendix<a class="headerlink" href="#v-appendix" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># How the new features were created
+
+# Feature Creation for Blue and Red Training sets
+BlueTrain &lt;- mutate(BlueTrain, GoldDiffPerMin = (blueTotalGold - 
+                                                   redTotalGold)/MinGameDuration,
+                    WardPlaceDiffPerMin = (blueWardPlaced - 
+                                             redWardPlaced)/MinGameDuration,
+                    DamageDiffPerMin = (blueChampionDamageDealt - 
+                                          redChampionDamageDealt)/MinGameDuration,
+                    HealDiffPerMin = (blueTotalHeal - 
+                                        redTotalHeal)/MinGameDuration,
+                    ObjectDmgDiffPerMin = (blueObjectDamageDealt - 
+                                             redObjectDamageDealt)/MinGameDuration,
+                    FirstTower = blueFirstTower,
+                    FirstBaron = blueFirstBaron,
+                    FirstInhibitor = blueFirstInhibitor,
+                    FirstDragon = blueFirstDragon,
+                    Win = blueWins)
+RedTrain &lt;- mutate(RedTrain, GoldDiffPerMin = (redTotalGold - 
+                                                 blueTotalGold)/MinGameDuration,
+                    WardPlaceDiffPerMin = (redWardPlaced - 
+                                             blueWardPlaced)/MinGameDuration,
+                    DamageDiffPerMin = (redChampionDamageDealt - 
+                                          blueChampionDamageDealt)/MinGameDuration,
+                    HealDiffPerMin = (redTotalHeal - 
+                                        blueTotalHeal)/MinGameDuration,
+                    ObjectDmgDiffPerMin = (redObjectDamageDealt - 
+                                             blueObjectDamageDealt)/MinGameDuration,
+                    FirstTower = redFirstTower,
+                    FirstBaron = redFirstBaron,
+                    FirstInhibitor = redFirstInhibitor,
+                    FirstDragon = redFirstDragon,
+                    Win = redWins)
+
+BlueTest &lt;- mutate(BlueTest, GoldDiffPerMin = (blueTotalGold - 
+                                                 redTotalGold)/MinGameDuration,
+                    WardPlaceDiffPerMin = (blueWardPlaced - 
+                                             redWardPlaced)/MinGameDuration,
+                    DamageDiffPerMin = (blueChampionDamageDealt - 
+                                          redChampionDamageDealt)/MinGameDuration,
+                    HealDiffPerMin = (blueTotalHeal - 
+                                        redTotalHeal)/MinGameDuration,
+                    ObjectDmgDiffPerMin = (blueObjectDamageDealt - 
+                                             redObjectDamageDealt)/MinGameDuration,
+                    FirstTower = blueFirstTower,
+                    FirstBaron = blueFirstBaron,
+                    FirstInhibitor = blueFirstInhibitor,
+                    FirstDragon = blueFirstDragon,
+                    Win = blueWins)
+RedTest &lt;- mutate(RedTest, GoldDiffPerMin = (redTotalGold - 
+                                               blueTotalGold)/MinGameDuration,
+                    WardPlaceDiffPerMin = (redWardPlaced - 
+                                             blueWardPlaced)/MinGameDuration,
+                    DamageDiffPerMin = (redChampionDamageDealt - 
+                                          blueChampionDamageDealt)/MinGameDuration,
+                    HealDiffPerMin = (redTotalHeal - 
+                                        blueTotalHeal)/MinGameDuration,
+                    ObjectDmgDiffPerMin = (redObjectDamageDealt - 
+                                             blueObjectDamageDealt)/MinGameDuration,
+                    FirstTower = redFirstTower,
+                    FirstBaron = redFirstBaron,
+                    FirstInhibitor = redFirstInhibitor,
+                    FirstDragon = redFirstDragon,
+                    Win = redWins)
+</pre></div>
+</div>
+<p>Christina Gough. 2019. “Distribution of League of Legends (Lol)
+Summoners in North America as of November 2019, by Tier.”
+<a class="reference external" href="https://www.statista.com/statistics/807298/league-of-legends-player-tier/">https://www.statista.com/statistics/807298/league-of-legends-player-tier/</a>.</p>
+<p>Shayaan Jagtap. 2018. “How We Trained a Machine to Predict the Winning
+Team in League of Legends.”
+<a class="reference external" href="https://medium.com/trendkite-dev/machine-learning-league-of-legends-victory-predictions-8bc6cbc7754e">https://medium.com/trendkite-dev/machine-learning-league-of-legends-victory-predictions-8bc6cbc7754e</a>.</p>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -216,11 +866,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="retail_forecast.html" title="previous page">
+        <a class="left-prev" href="LL-174-Final.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">&lt;no title&gt;</p>
+                <p class="prevnext-title">Retail Sales Forecasting</p>
             </div>
         </a>
     </div>
