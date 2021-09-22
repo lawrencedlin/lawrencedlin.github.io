@@ -9,8 +9,9 @@ parts:
   - file: viz
 - caption: Undergrad Projects
   chapters:
-  - file: undergrad/retail_forecast
+  - file: undergrad/LL-174-Final
   - file: undergrad/lolwin
+    title: League of Legends Win Classifier
   - file: undergrad/web_scrape
   - file: undergrad/sansum
 - caption: Graduate Projects
