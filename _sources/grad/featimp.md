@@ -1,4 +1,4 @@
-# Introduction
+# Feature Importance 
 Feature importance encompasses a suite of techniques to assess individual impact of a feature on a model. A score is usually calculated for all the features in order to rank them. Feature importance is important for the three reasons outlined [here](https://towardsdatascience.com/understanding-feature-importance-and-how-to-implement-it-in-python-ff0287b20285). 
 
 1. It allows you to understand your data and model better by quantifiying the relationship between features and the model
