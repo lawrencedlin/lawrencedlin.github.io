@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Retail Sales Forecasting &#8212; Lawrence Lin</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -89,7 +90,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Data Visualizations
  </span>
@@ -101,7 +102,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Undergrad Projects
  </span>
@@ -277,11 +278,11 @@
         
               <div>
                 
-  <div class="section" id="retail-sales-forecasting">
+  <section id="retail-sales-forecasting">
 <h1>Retail Sales Forecasting<a class="headerlink" href="#retail-sales-forecasting" title="Permalink to this headline">¶</a></h1>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="i-abstract">
+<section id="i-abstract">
 <h1>I. Abstract<a class="headerlink" href="#i-abstract" title="Permalink to this headline">¶</a></h1>
 <p>In this report I will attempt extract information on economic activity
 in the restaurant industry throughout the year. I will do this by
@@ -291,8 +292,8 @@ build a model and forecast with it. I find that economic activity in the
 restaurant industry is highest in summer months and lowest in the two
 months after Christmas. I conclude from my forecasts that the demand for
 food services and drinking places is steadily growing.</p>
-</div>
-<div class="section" id="ii-introduction">
+</section>
+<section id="ii-introduction">
 <h1>II. Introduction<a class="headerlink" href="#ii-introduction" title="Permalink to this headline">¶</a></h1>
 <p>Retail sales are one of the primary measures of consumer demand for both
 durable and non-durable goods. Retail sales is an important economic
@@ -314,10 +315,10 @@ retail sales from Covid-19 in the past few months.</p>
 <p>My data was downloaded from
 <a class="reference external" href="https://fred.stlouisfed.org/series/RSFSDPN">https://fred.stlouisfed.org/series/RSFSDPN</a>. My report was made through
 the ggplot2, ggfortify, forecast, MASS, and qpcR packages.</p>
-</div>
-<div class="section" id="iii-model-building-and-forecasting">
+</section>
+<section id="iii-model-building-and-forecasting">
 <h1>III. Model Building and Forecasting<a class="headerlink" href="#iii-model-building-and-forecasting" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="model-identification">
+<section id="model-identification">
 <h2>Model Identification<a class="headerlink" href="#model-identification" title="Permalink to this headline">¶</a></h2>
 <p>We can see from plotting the original data that the data is
 non-stationary: there is a linear trend and a seasonal component. The
@@ -367,8 +368,8 @@ SARIMA(2, 0, 0) × (1, 1, 0)<sub>12</sub></p>
 ## [1] 0.0005385189
 </pre></div>
 </div>
-</div>
-<div class="section" id="model-estimation">
+</section>
+<section id="model-estimation">
 <h2>Model Estimation<a class="headerlink" href="#model-estimation" title="Permalink to this headline">¶</a></h2>
 <p>We estimate the parameters of the models using MLE. We see that that the
 SAR component in model B and model C is not significant because it is
@@ -437,8 +438,8 @@ pure AR(p) models, they are always invertible. We show that both models
 are both causal and stationary because all of their roots lie inside of
 the unit circle.</p>
 <p><a class="reference internal" href="../_images/invroots-1.png"><img alt="../_images/invroots-1.png" src="../_images/invroots-1.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/invroots-2.png"><img alt="../_images/invroots-2.png" src="../_images/invroots-2.png" style="width: 50%;" /></a></p>
-</div>
-<div class="section" id="diagnostic-checking">
+</section>
+<section id="diagnostic-checking">
 <h2>Diagnostic Checking<a class="headerlink" href="#diagnostic-checking" title="Permalink to this headline">¶</a></h2>
 <p>Now we will perform diagnostic checking on model A to determine whether
 our model is a good fit by analyzing the residuals. If our model is a
@@ -553,17 +554,17 @@ residuals and its lower AICc. Our final model is
 was obtained and MLE estimates of coefficents are obtained from the
 previous steps. We can forecast on the log-transformed data first. We
 can see that test set falls with our 95% Prediction intervals.</p>
-</div>
-<div class="section" id="forecasting">
+</section>
+<section id="forecasting">
 <h2>Forecasting<a class="headerlink" href="#forecasting" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/Forecasting-log-1.png"><img alt="../_images/Forecasting-log-1.png" src="../_images/Forecasting-log-1.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/Forecasting-log-2.png"><img alt="../_images/Forecasting-log-2.png" src="../_images/Forecasting-log-2.png" style="width: 50%;" /></a></p>
 <p>Now we forecast on the original data by exponentiating the forecasted
 values prior. The test set still falls within our 95% Prediction
 intervals.</p>
 <p><a class="reference internal" href="../_images/Forecasting-original-1.png"><img alt="../_images/Forecasting-original-1.png" src="../_images/Forecasting-original-1.png" style="width: 50%;" /></a><a class="reference internal" href="../_images/Forecasting-original-2.png"><img alt="../_images/Forecasting-original-2.png" src="../_images/Forecasting-original-2.png" style="width: 50%;" /></a></p>
-</div>
-</div>
-<div class="section" id="iv-conclusion">
+</section>
+</section>
+<section id="iv-conclusion">
 <h1>IV. Conclusion<a class="headerlink" href="#iv-conclusion" title="Permalink to this headline">¶</a></h1>
 <p>In conclusion, I was able to successfully model the data as a AR(3)
 process, differenced at lag 12 or as a
@@ -581,15 +582,15 @@ steady growth in this industry over the next two years representing a
 safe investment opportunity. However, Covid-19 may cause permanent
 shifts in this industry, and the long-term effects of the pandemic are
 not captured in this study.</p>
-</div>
-<div class="section" id="v-references">
+</section>
+<section id="v-references">
 <h1>V. References<a class="headerlink" href="#v-references" title="Permalink to this headline">¶</a></h1>
 <p>U.S. Census Bureau, Retail Sales [RSFSDPN], retrieved from FRED,
 Federal Reserve Bank of St. Louis;
 <a href="https://fred.stlouisfed.org/series/RSFSDPN" class="uri">https://fred.stlouisfed.org/series/RSFSDPN</a>,
 June 11, 2020.</p>
-</div>
-<div class="section" id="vi-appendix">
+</section>
+<section id="vi-appendix">
 <h1>VI. Appendix<a class="headerlink" href="#vi-appendix" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Convert data into time series object
 Sales &lt;- ts(Sales.csv[,2], start = c(2010,1),frequency=12)
@@ -818,7 +819,7 @@ autoplot(window(Sales,start=2018), series = &#39;data&#39;,color=&#39;black&#39;
   ggtitle(&#39;Forecast of Retail Sales&#39;)
 </pre></div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

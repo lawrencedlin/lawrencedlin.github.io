@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>League of Legends Win Classifier &#8212; Lawrence Lin</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -89,7 +90,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Data Visualizations
  </span>
@@ -101,7 +102,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Undergrad Projects
  </span>
@@ -303,7 +304,7 @@
         
               <div>
                 
-  <div class="section" id="league-of-legends-win-classifier">
+  <section id="league-of-legends-win-classifier">
 <h1>League of Legends Win Classifier<a class="headerlink" href="#league-of-legends-win-classifier" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <p>League of Legends, commonly abbreviated LoL, is a popular video game
@@ -311,7 +312,7 @@ with millions of concurrent players. In its premier 5v5 competitive
 mode, the objective is to destroy the opposing team’s nexus. In this
 report, we will attempt to classify whether a given team wins or loses
 using measures of in-game performance.</p>
-<div class="section" id="a-brief-primer-on-lol">
+<section id="a-brief-primer-on-lol">
 <h2>A Brief Primer on LoL<a class="headerlink" href="#a-brief-primer-on-lol" title="Permalink to this headline">¶</a></h2>
 <p>In a LoL game, each player selects a unique champion to control for the
 duration of the game, which is usually from 20-40 minutes. The goal is
@@ -338,9 +339,9 @@ beneficial variables such as enemy champion kills, vision, and
 experience are for League of Legends teams. My research question is
 this: How accurately can we classify a team as a winner or loser looking
 at the overall performance of the team?</p>
-</div>
-</div>
-<div class="section" id="i-data">
+</section>
+</section>
+<section id="i-data">
 <h1>I. Data<a class="headerlink" href="#i-data" title="Permalink to this headline">¶</a></h1>
 <p>I obtained my data from kaggle. The data is from ranked League of
 Legends games from the three highest LoL ranks: Challenger, GrandMaster,
@@ -409,7 +410,7 @@ the difference in gold, champion damage, objective damage, and more per
 minute to equate for game length. We have also discarded all games less
 than 15 minutes as that is the earliest possible time a team can
 surrender. # III. Methods</p>
-<div class="section" id="analysis-plan">
+<section id="analysis-plan">
 <h2>Analysis Plan<a class="headerlink" href="#analysis-plan" title="Permalink to this headline">¶</a></h2>
 <p>My analysis plan is to use supervised machine learning to classify a
 given LoL team to the labels “Win” or “Lose”. Because this is a binary
@@ -461,8 +462,8 @@ TestY &lt;- select(Test, Win)
 TestX &lt;- select(Test, -Win)
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-overview-of-new-features">
+</section>
+<section id="data-overview-of-new-features">
 <h2>Data Overview of new features<a class="headerlink" href="#data-overview-of-new-features" title="Permalink to this headline">¶</a></h2>
 <p>The basic attributes of the modified set of all the data are summarized
 below, along with the five-number summary of the continuous variables. I
@@ -583,11 +584,11 @@ continuous predictors to get infer their relationships to the response.
 From the boxplots it appears that GoldDiffPerMin and ObjectDmgDiffPerMin
 are usually higher for winning teams.</p>
 <p><img alt="" src="../_images/Boxplots-1.png" /></p>
-</div>
-</div>
-<div class="section" id="ii-model-building">
+</section>
+</section>
+<section id="ii-model-building">
 <h1>II. Model Building<a class="headerlink" href="#ii-model-building" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="logistic-regression-model-building">
+<section id="logistic-regression-model-building">
 <h2>Logistic Regression Model Building<a class="headerlink" href="#logistic-regression-model-building" title="Permalink to this headline">¶</a></h2>
 <p>I fit a Logistic Regression Model using the glm() function, to model the
 probability of Win on the predictors. The summary shows that all of the
@@ -638,8 +639,8 @@ validation error is 1.51%.</p>
 ## [1] 0.01512488
 </pre></div>
 </div>
-</div>
-<div class="section" id="logistic-regression-model-analysis">
+</section>
+<section id="logistic-regression-model-analysis">
 <h2>Logistic Regression Model Analysis<a class="headerlink" href="#logistic-regression-model-analysis" title="Permalink to this headline">¶</a></h2>
 <p>First I plotted the predictors versus the estimated probabilities of the
 training data. It appears that past a positive threshold value of
@@ -666,8 +667,8 @@ well to the test data, and not overfitting.</p>
 ## [1] 0.01880692
 </pre></div>
 </div>
-</div>
-<div class="section" id="random-forests-model-building">
+</section>
+<section id="random-forests-model-building">
 <h2>Random Forests Model Building<a class="headerlink" href="#random-forests-model-building" title="Permalink to this headline">¶</a></h2>
 <p>Using the randomForest() function, I fit a Random Forest model to my
 training data. We can see that the OOB estimate of error rate is 1.48%,
@@ -711,16 +712,16 @@ increases are minimal.
 ## [1] 0.01468449
 </pre></div>
 </div>
-</div>
-<div class="section" id="final-model">
+</section>
+<section id="final-model">
 <h2>Final Model<a class="headerlink" href="#final-model" title="Permalink to this headline">¶</a></h2>
 <p>After comparing the validation error for the Logistic Regression model
 and the Out-Of-Bag error for the Random Forest Model, I choose the
 Random Forest Model for its higher accuracy. The final Random Forest
 model as a test error rate of 1.49%.</p>
-</div>
-</div>
-<div class="section" id="iii-conclusion">
+</section>
+</section>
+<section id="iii-conclusion">
 <h1>III. Conclusion<a class="headerlink" href="#iii-conclusion" title="Permalink to this headline">¶</a></h1>
 <p>In conclusion, classifying the winning League of Legends team can be
 done well and it depends highly on how much gold a team has, how many
@@ -731,7 +732,7 @@ recommend for future projects to consider data that captures the state
 of the game at different poitns of time, to gain an idea of which
 variables are most beneficial to a team at different points of the game
 flow. My final model was</p>
-<div class="section" id="limitations">
+<section id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <p>The limitations of this study are that to win a game in League of
 Legends, a team has to win the final teamfight and kill most of the
@@ -747,8 +748,8 @@ rarely throwaway games where they have generated an advantage. This
 explains why are classifier is so good at classifygin “Win” or “Lose”,
 because generally generating a team advantage results in a win,
 reflecting the skill level of the best League of Legends players.</p>
-</div>
-<div class="section" id="future-research-directions">
+</section>
+<section id="future-research-directions">
 <h2>Future Research Directions<a class="headerlink" href="#future-research-directions" title="Permalink to this headline">¶</a></h2>
 <p>A similar project showed accuracy rates for end-of-=game data, with an
 accuracy rate of 98.09% for the logistic regression model and 97.77% for
@@ -760,12 +761,12 @@ champion selection. In the competitive League of Legends scene, emphasis
 is placed on champion synergies and counters. Assuming equal
 matchmaking, it would be interesting to see how the result of the game
 is decided before the game has even started.</p>
-</div>
-</div>
-<div class="section" id="iv-references">
+</section>
+</section>
+<section id="iv-references">
 <h1>IV. References<a class="headerlink" href="#iv-references" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="v-appendix">
+</section>
+<section id="v-appendix">
 <h1>V. Appendix<a class="headerlink" href="#v-appendix" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># How the new features were created
 
@@ -839,7 +840,7 @@ Summoners in North America as of November 2019, by Tier.”
 <p>Shayaan Jagtap. 2018. “How We Trained a Machine to Predict the Winning
 Team in League of Legends.”
 <a class="reference external" href="https://medium.com/trendkite-dev/machine-learning-league-of-legends-victory-predictions-8bc6cbc7754e">https://medium.com/trendkite-dev/machine-learning-league-of-legends-victory-predictions-8bc6cbc7754e</a>.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
