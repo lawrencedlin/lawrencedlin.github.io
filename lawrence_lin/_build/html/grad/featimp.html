@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Feature Importance &#8212; Lawrence Lin</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="search_engine.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Lawrence Lin</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Data Visualizations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../viz.html">
+   From school
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Undergrad Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../undergrad/LL-174-Final.html">
+   Retail Sales Forecasting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../undergrad/lolwin.html">
+   League of Legends Win Classifier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../undergrad/sansum.html">
+   Sansum
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Graduate Projects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="implicit_rating.html">
+   Implicit Rating Prediction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Feature Importance
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/grad/featimp.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lawrencedlin/lawrencedlin.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lawrencedlin/lawrencedlin.github.io/issues/new?title=Issue%20on%20page%20%2Fgrad/featimp.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Feature Importance
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-based-importance-strategies">
+   Data-based importance strategies
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spearman-s-rank-correlation">
+     Spearman’s Rank Correlation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pca">
+     PCA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-based-importance-strategies">
+   Model-based importance strategies
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#permutation-importance">
+     Permutation Importance
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drop-column-importance">
+     Drop-Column Importance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-strategies">
+   Comparing Strategies
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatic-feature-selection">
+   Automatic Feature Selection
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variance-and-empirical-p-values-for-feature-importances">
+   Variance and empirical p-values for feature importances
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variance">
+     Variance
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#empirical-p-values">
+     Empirical p-values
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="feature-importance">
+<h1>Feature Importance<a class="headerlink" href="#feature-importance" title="Permalink to this headline">¶</a></h1>
+<p>Feature importance encompasses a suite of techniques to assess individual impact of a feature on a model. A score is usually calculated for all the features in order to rank them. Feature importance is important for the three reasons outlined <a class="reference external" href="https://towardsdatascience.com/understanding-feature-importance-and-how-to-implement-it-in-python-ff0287b20285">here</a>.</p>
+<ol class="simple">
+<li><p>It allows you to understand your data and model better by quantifiying the relationship between features and the model</p></li>
+<li><p>It allows you to remove unimportant features to make the model simpler and train faster</p></li>
+</ol>
+<p>In this report, we implement data-based feature importances such as Spearman’s rank correlation, and Principal Components Analysis, which calculate a score using only the data. We also implement model-based feature importances such as drop-column and permutation feature importance, and we analyze these techniques and their practical effects on model selection.</p>
+<p>We use the toy diabetes dataset for all our analysis.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.. _diabetes_dataset:
+
+Diabetes dataset
+----------------
+
+Ten baseline variables, age, sex, body mass index, average blood
+pressure, and six blood serum measurements were obtained for each of n =
+442 diabetes patients, as well as the response of interest, a
+quantitative measure of disease progression one year after baseline.
+
+**Data Set Characteristics:**
+
+  :Number of Instances: 442
+
+  :Number of Attributes: First 10 columns are numeric predictive values
+
+  :Target: Column 11 is a quantitative measure of disease progression one year after baseline
+
+  :Attribute Information:
+      - age     age in years
+      - sex
+      - bmi     body mass index
+      - bp      average blood pressure
+      - s1      tc, T-Cells (a type of white blood cells)
+      - s2      ldl, low-density lipoproteins
+      - s3      hdl, high-density lipoproteins
+      - s4      tch, thyroid stimulating hormone
+      - s5      ltg, lamotrigine
+      - s6      glu, blood sugar level
+
+Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times `n_samples` (i.e. the sum of squares of each column totals 1).
+
+Source URL:
+https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html
+
+For more information see:
+Bradley Efron, Trevor Hastie, Iain Johnstone and Robert Tibshirani (2004) &quot;Least Angle Regression,&quot; Annals of Statistics (with discussion), 407-499.
+(https://web.stanford.edu/~hastie/Papers/LARS/LeastAngle_2002.pdf)
+</pre></div>
+</div>
+</section>
+<section id="data-based-importance-strategies">
+<h1>Data-based importance strategies<a class="headerlink" href="#data-based-importance-strategies" title="Permalink to this headline">¶</a></h1>
+<section id="spearman-s-rank-correlation">
+<h2>Spearman’s Rank Correlation<a class="headerlink" href="#spearman-s-rank-correlation" title="Permalink to this headline">¶</a></h2>
+<p>Spearman’s rank correlation is a non-parametric measure of the correlation between two variables. We rank each of the features and responses, and calculate the correlation of the ranks. The effect of ranking the variables and calculating the correlation using the respective ranks is that it assesses how well a monotonically increasing function explains the data.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&quot;Spearman&#39;s rank correlation&quot;}, xlabel=&#39;feature&#39;, ylabel=&#39;importance&#39;&gt;
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/featimp_11_1.png" /></p>
+</section>
+<section id="pca">
+<h2>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">¶</a></h2>
+<p>Principal components analysis is a dimensionality reduction algorithm. We reconstruct the data into <code class="docutils literal notranslate"><span class="pre">n</span></code> principal components, which are just linear combinations of the original data that capture the maximum amount of variability and are uncorrelated. Here we set the number of components to be the number of features so we can use the proportion of variability explained by a principal component as our quantitative measure of feature importance.</p>
+<p><img alt="png" src="../_images/featimp_15_0.png" /></p>
+<p>It is interesting to see that while <code class="docutils literal notranslate"><span class="pre">age</span></code> is the most important feature using PCA, it is not important according to spearman correlation.</p>
+</section>
+</section>
+<section id="model-based-importance-strategies">
+<h1>Model-based importance strategies<a class="headerlink" href="#model-based-importance-strategies" title="Permalink to this headline">¶</a></h1>
+<p>We test feature importances using three models: an Ordinary Least Squares model, a Random Forest Regressor model, and a Gradient Boosted Regression model. Firstly, we perform a randomized grid search to find our best baseline models using 5-fold cross-validated $R^{2}$ score.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>OLS parameter space: {}
+RFRegressor parameter space: {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, None], &#39;min_samples_leaf&#39;: [1, 3, 5, 7, 9]}
+GBRegressor parameter space: {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, None], &#39;min_samples_leaf&#39;: [1, 3, 5, 7, 9], &#39;learning_rate&#39;: [0.0001, 0.001, 0.01, 0.1]}
+</pre></div>
+</div>
+<p>Searching for the best model</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>OLS best params: {}
+RFRegressor best params: {&#39;min_samples_leaf&#39;: 7, &#39;max_depth&#39;: 3}
+GBRegressor best params: {&#39;min_samples_leaf&#39;: 7, &#39;max_depth&#39;: 1, &#39;learning_rate&#39;: 0.1}
+</pre></div>
+</div>
+<section id="permutation-importance">
+<h2>Permutation Importance<a class="headerlink" href="#permutation-importance" title="Permalink to this headline">¶</a></h2>
+<p>The permuation importance algorithm works like this: First calculate a baseline score using a metric of choice. Then for every feature, shuffle that feature to break the relationship between it and the response variable, and recalculate your metric. Keep track of the differences between the baseline metric and the metric calculated without that feature. The bigger the difference is, the more important the feature is because it causes a larger decrease in performace of the model.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Normalized Permutation Feature Importances&#39;}, xlabel=&#39;feature&#39;, ylabel=&#39;importance&#39;&gt;
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/featimp_26_1.png" /></p>
+</section>
+<section id="drop-column-importance">
+<h2>Drop-Column Importance<a class="headerlink" href="#drop-column-importance" title="Permalink to this headline">¶</a></h2>
+<p>Drop column feature importance is similar to permutation importance. The key difference is that instead of shuffling the feature you want to calculate an importance for, you drop it entirely. Therefore your feature importance is a measure of the decrease in model performance when that feature is excluded.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Normalized Drop-Column Feature Importances&#39;}, xlabel=&#39;feature&#39;, ylabel=&#39;importance&#39;&gt;
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/featimp_30_1.png" /></p>
+</section>
+</section>
+<section id="comparing-strategies">
+<h1>Comparing Strategies<a class="headerlink" href="#comparing-strategies" title="Permalink to this headline">¶</a></h1>
+<p>We compare the $R^{2}$ of a Gradient-Boosted Regression model on the diabetes dataset when training on the top <code class="docutils literal notranslate"><span class="pre">k</span></code> features selected by the respective techniques. Permutation importance and Spearman correlation seem to give the best results, with drop-column a bit behind, and PCA only converging as <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">num_features</span></code>.</p>
+<p><img alt="png" src="../_images/featimp_37_0.png" /></p>
+</section>
+<section id="automatic-feature-selection">
+<h1>Automatic Feature Selection<a class="headerlink" href="#automatic-feature-selection" title="Permalink to this headline">¶</a></h1>
+<p>In my feature selection algorithm, we use permutation importance to calculate the feature importance of each column. We start by calculating the feature importances considering the full dataset. We calculate a baseline $R^{2}$ score on the validation set. Then, we drop the lowest feature importance column, refit the model to the data without this feature, and recalculate the $R^{2}$ score. We stop as soon as our metric gets worse.</p>
+<p>We plot a heatmap of the feature importances recalculated at each step, with the lowest permuation feature importance being dropped until the stopping condition is reached of a lower cross-validated $R^{2}$ score as compared to baseline is reached. It is importance to recalculate feature importances because of codependencies between features e.g. <code class="docutils literal notranslate"><span class="pre">s3</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>. Although at baseline <code class="docutils literal notranslate"><span class="pre">s3</span></code> is fifth most importance feature, after droppin <code class="docutils literal notranslate"><span class="pre">age</span></code> it is the least important.</p>
+<p><img alt="png" src="../_images/featimp_46_0.png" /></p>
+</section>
+<section id="variance-and-empirical-p-values-for-feature-importances">
+<h1>Variance and empirical p-values for feature importances<a class="headerlink" href="#variance-and-empirical-p-values-for-feature-importances" title="Permalink to this headline">¶</a></h1>
+<section id="variance">
+<h2>Variance<a class="headerlink" href="#variance" title="Permalink to this headline">¶</a></h2>
+<p>We get 100 bootstrap samples of the data with replacement, with a bootstrap size of 75% of the training set. The results show the feature importances for <code class="docutils literal notranslate"><span class="pre">s5</span></code>, <code class="docutils literal notranslate"><span class="pre">bp</span></code>, and <code class="docutils literal notranslate"><span class="pre">s3</span></code> are in the range of its standard deviation. We want to confirm our hypothesis these feature importances are not important by calculating the empirical p-values.</p>
+<p><img alt="png" src="../_images/featimp_52_0.png" /></p>
+</section>
+<section id="empirical-p-values">
+<h2>Empirical p-values<a class="headerlink" href="#empirical-p-values" title="Permalink to this headline">¶</a></h2>
+<p>Our hypotheses are confirmed. By comparing how often a feature importance drawn from the null distribution is less than the baseline feature importance calculated from the original data, we find that none of the feature importances <code class="docutils literal notranslate"><span class="pre">s5</span></code>, <code class="docutils literal notranslate"><span class="pre">bp</span></code>, or <code class="docutils literal notranslate"><span class="pre">s3</span></code> are significant at the $\alpha = 0.04$ significance level.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Empircal p-value for s5: 0.78
+Empircal p-value for bp: 0.64
+Empircal p-value for s3: 0.11
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/featimp_56_1.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./grad"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="search_engine.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">&lt;no title&gt;</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Lawrence Lin<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

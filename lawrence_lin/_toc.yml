@@ -15,6 +15,6 @@ parts:
   - file: undergrad/sansum
 - caption: Graduate Projects
   chapters:
-  - file: grad/word_sim
+  - file: grad/implicit_rating
   - file: grad/search_engine
-  - file: grad/practicum
+  - file: grad/featimp

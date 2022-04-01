@@ -1,0 +1,2 @@
+# Implicit Rating Prediction
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQbVbeOZT_s7ZRb8dVo68_DPJ4HK2z-eq12xYui4hUQWcCDy-Yt0o3JgTWs3k_V5g/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

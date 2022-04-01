@@ -1,0 +1,4 @@
+#!/bin/bash
+jupyter-book clean lawrence_lin/
+jupyter-book build lawrence_lin/
+ghp-import -n -p -f lawrence_lin/_build/html 
